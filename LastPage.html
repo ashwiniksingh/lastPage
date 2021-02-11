@@ -10,8 +10,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" crossorigin="anonymous">
-
-    <title>Last Page!</title>
+    <link rel="icon" type="image/svg+xml" href="/pencil-square.svg"> 
+       <title>Last Page!</title>
 </head>
 
 <body>
@@ -22,7 +22,9 @@
         </textarea>
        
     </div>
-    
+    <div id="saved-alert">
+        Saved
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
     </script>
@@ -35,6 +37,10 @@
             if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode == 83) {
                 e.preventDefault();
                 localStorage.setItem("theScribbleValue", theScribbleValue);
+                $("#saved-alert").css({
+                    'display': 'block'
+                });
+                $("#saved-alert").delay(340).fadeOut(600);
             }
         }, false);
 
