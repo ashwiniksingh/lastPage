@@ -1,0 +1,23 @@
+{
+    "name": "Last Page!",
+    "version": "1.0",
+    "description": "An browser extension to save any text in the browser local storage e.g. random thoughts, notes, copied text to be used later!",
+    "manifest_version": 2,
+    "chrome_url_overrides" : {
+        "newtab" : "/LastPage.html"
+    },
+    "browser_action" : {
+        "default_icon" : "/pencil-square.svg"
+    },
+    "permissions" : ["tabs"],
+    "background" : {
+        "scripts" : ["/background.js"],
+        "persistent" : false
+    },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["content.js"]
+        }
+      ]
+}
